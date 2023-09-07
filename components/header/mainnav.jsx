@@ -5,6 +5,7 @@ import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
 import TopNav from "./topnav";
+import logo from "../../public/logo.png";
 
 function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ function MainNav() {
             <div className="ml-[-30px]">
               <Link href="/">
                 <Image
-                  src="https://dcassetcdn.com/design_img/2078023/595843/595843_11051780_2078023_2014012c_image.png"
+                  src={logo}
                   alt="logo"
                   width={100}
                   height={100}

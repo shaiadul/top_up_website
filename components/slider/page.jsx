@@ -24,8 +24,8 @@ const BannerSlider = () => {
     }
 
   return (
-    <section className="relative mt-10 flex h-[calc(100vh-500px)] w-screen flex-col justify-center items-center">
-      <div className="absolute w-full h-full ">
+    <section className="relative mt-10 flex h-[calc(100vh-500px)] w-screen flex-col justify-center items-center ">
+      <div className="absolute w-full h-full -z-10">
         <Image     
           width={100}
           height={100}
@@ -34,7 +34,7 @@ const BannerSlider = () => {
         // src={`../../public/logo.png`}
           src={slide1}
           alt="banner"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center "
         /> 
         
       </div>

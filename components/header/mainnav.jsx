@@ -204,6 +204,54 @@ function MainNav() {
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
             <div ref={divRef} className=" pt-2 pb-3 space-y-1 sm:px-3">
+              
+              
+              <div className="mb-3">
+                <ul className="flex flex-col-reverse gap-2 justify-center items-center">
+                  {session.data?.user ? (
+                    <li className="inline-block ">
+                      <button
+                        onClick={() => signOut("google")}
+                        className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500"
+                      >
+                        <Link href="/"> logOut</Link>
+                      </button>
+                    </li>
+                  ) : (
+                    <li className="inline-block ">
+                      <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm  py-1 px-3 hover:text-white rounded-md duration-500">
+                        <Link href="/login"> Login</Link>
+                      </button>
+                    </li>
+                  )}
+
+                  {session.data?.user ? (
+                    <li className="inline-block ">
+                      <Link href="/">
+                        <Image
+                          src={session.data?.user?.image}
+                          alt="logo"
+                          width={100}
+                          height={100}
+                          className="w-9 h-9 rounded-full border border-[#50DBB4] ml-2"
+                        />
+                      </Link>
+                    </li>
+                  ) : (
+                    <li className="inline-block ">
+                      <Link href="/">
+                        <Image
+                          src={victor}
+                          alt="logo"
+                          width={100}
+                          height={100}
+                          className="w-9 h-9 rounded-full border border-[#50DBB4] ml-2"
+                        />
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
               <div className="block">
                 <ul className="flex items-center justify-center space-x-4 text-xl">
                   <li className="inline-block ">
@@ -262,20 +310,6 @@ function MainNav() {
                   />
                   <MagnifyingGlassIcon className="w-6 h-6 font-semibold text-gray-400 inline-block" />
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <ul className="mb-2">
-                  <li className="inline-block ">
-                    <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm py-1 px-3 hover:text-white rounded-md duration-500">
-                      <Link href="/"> SignUp</Link>
-                    </button>
-                  </li>
-                  <li className="inline-block ">
-                    <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500">
-                      <Link href="/login"> Login</Link>
-                    </button>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

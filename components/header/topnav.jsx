@@ -20,7 +20,7 @@ function TopNav() {
               alt="logo"
               width={100}
               height={100}
-              className="w-7 h-7 "
+              className="w-7 h-7 hover:animate-ping duration-700 "
             />
           </Link>
           <Link target="_blank" href="/">
@@ -29,7 +29,7 @@ function TopNav() {
               alt="logo"
               width={100}
               height={100}
-              className="w-7 h-7 rounded-full"
+              className="w-7 h-7 rounded-full hover:animate-ping duration-700"
             />
           </Link>
           <Link target="_blank" href="https://wa.me/01740673877">
@@ -38,7 +38,7 @@ function TopNav() {
               alt="logo"
               width={100}
               height={100}
-              className="w-9 h-9 "
+              className="w-9 h-9 hover:animate-ping duration-700 "
             />
           </Link>
           <Link href="/" className="flex justify-center items-center gap-2 btn hover:opacity-60 text-white border border-[#50DBB4] bg-[#50dbb4c6] hover:bg-[#50DBB4] duration-500 py-1 px-2 rounded-md">

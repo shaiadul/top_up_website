@@ -13,7 +13,7 @@ function MainNav() {
   const divRef = useRef();
 
   return (
-    <nav className="shadow-lg fixed top-0 w-full">
+    <nav className="shadow-lg w-full">
       <TopNav />
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between h-16">
@@ -104,7 +104,7 @@ function MainNav() {
               </li>
               <li className="inline-block ">
                 <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500">
-                  <Link href="/"> Login</Link>
+                  <Link href="/login"> Login</Link>
                 </button>
               </li>
             </ul>
@@ -218,7 +218,7 @@ function MainNav() {
                   </li>
                 </ul>
               </div>
-              <div className="inline-flex ml-[113px] ">
+              <div className="flex justify-center mx-auto">
                 <div className="my-4 mr-2 py-1 px-3 border-2 border-[#50DBB4] rounded-full ">
                   <input
                     className="focus:outline-none bg-transparent"
@@ -237,7 +237,7 @@ function MainNav() {
                   </li>
                   <li className="inline-block ">
                     <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500">
-                      <Link href="/"> Login</Link>
+                      <Link href="/login"> Login</Link>
                     </button>
                   </li>
                 </ul>

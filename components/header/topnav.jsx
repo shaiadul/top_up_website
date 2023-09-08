@@ -7,8 +7,8 @@ import whatsappIcon from "../../public/whatsapp-logo-transparent.png";
 
 function TopNav() {
   return (
-    <section className="py-3 ">
-      <div className="container mx-auto px-5 flex justify-between items-center">
+    
+      <section className="container mx-auto px-5 flex justify-between items-center py-3">
         <div></div>
         <div className="flex justify-center items-center gap-3">
           <Link
@@ -46,8 +46,7 @@ function TopNav() {
             Android App
           </Link>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
 

@@ -2,18 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .hoverable {
-    position: relative;
+  /* --------------------------------- */
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  .hoverable > a:after {
-    content: "\25BC";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
+  
+  .login {
+    text-align: center;
+    max-width: 20rem;
+    border: 1px solid #50DBB4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
   }
-
-  .hoverable:hover .mega-menu {
-    display: block;
-  } */
+  
+  .facebook-login-btn {
+    color: #FFF;
+    background-color: #3b5998;
+    border-radius: 0.4em;
+    font-size: 22px;
+    padding: 0.75em 1em;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1;
+    text-align: center;
+    font-weight: 300;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  @media screen and (min-width: 1025px) {
+    .facebook-login-btn:hover {
+      background-color: #25417b;
+      color: #FFF;
+    }
+  }
+  .facebook-login-btn:focus {
+    background-color: #5974ad;
+    color: #FFF;
+  }
+  
+  .twitter-login-btn {
+    color: #FFF;
+    background-color: #1da1f2;
+    border-radius: 0.4em;
+    font-size: 22px;
+    padding: 0.75em 1em;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1;
+    text-align: center;
+    font-weight: 300;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  @media screen and (min-width: 1025px) {
+    .twitter-login-btn:hover {
+      background-color: #0188db;
+      color: #FFF;
+    }
+  }
+  .twitter-login-btn:focus {
+    background-color: #57b3eb;
+    color: #FFF;
+  }
+  
+  .google-login-btn {
+    color: #FFF;
+    background-color: #d14836;
+    border-radius: 0.4em;
+    font-size: 22px;
+    padding: 0.75em 1em;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1;
+    text-align: center;
+    font-weight: 300;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  @media screen and (min-width: 1025px) {
+    .google-login-btn:hover {
+      background-color: #b72f1d;
+      color: #FFF;
+    }
+  }
+  .google-login-btn:focus {
+    background-color: #d17569;
+    color: #FFF;
+  }

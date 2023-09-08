@@ -6,11 +6,14 @@ import Link from "next/link";
 import Image from "next/image";
 import TopNav from "./topnav";
 import logo from "../../public/logo.png";
+import victor from "../../public/vector.jpg";
 import { MagnifyingGlassIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import { signOut, useSession } from "next-auth/react";
 
 function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
   const divRef = useRef();
+  const session = useSession();
 
   return (
     <nav className="shadow-lg w-full">
@@ -96,17 +99,49 @@ function MainNav() {
           </div>
 
           <div className="hidden lg:block">
-            <ul>
-              <li className="inline-block ">
-                <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm py-1 px-3 hover:text-white rounded-md duration-500">
-                  <Link href="/"> SignUp</Link>
-                </button>
-              </li>
-              <li className="inline-block ">
-                <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500">
-                  <Link href="/login"> Login</Link>
-                </button>
-              </li>
+            <ul className="flex justify-center items-center">
+              {session.data?.user ? (
+                <li className="inline-block ">
+                  <button
+                    onClick={() => signOut("google")}
+                    className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500"
+                  >
+                    <Link href="/"> logOut</Link>
+                  </button>
+                </li>
+              ) : (
+                <li className="inline-block ">
+                  <button className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm  py-1 px-3 hover:text-white rounded-md duration-500">
+                    <Link href="/login"> Login</Link>
+                  </button>
+                </li>
+              )}
+
+              {session.data?.user ? (
+                <li className="inline-block ">
+                  <Link href="/">
+                    <Image
+                      src={session.data?.user?.image}
+                      alt="logo"
+                      width={100}
+                      height={100}
+                      className="w-9 h-9 rounded-full border border-[#50DBB4] ml-2"
+                    />
+                  </Link>
+                </li>
+              ) : (
+                <li className="inline-block ">
+                  <Link href="/">
+                    <Image
+                      src={victor}
+                      alt="logo"
+                      width={100}
+                      height={100}
+                      className="w-9 h-9 rounded-full border border-[#50DBB4] ml-2"
+                    />
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 

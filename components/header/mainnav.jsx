@@ -6,13 +6,14 @@ import Link from "next/link";
 import Image from "next/image";
 import TopNav from "./topnav";
 import logo from "../../public/logo.png";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
   const divRef = useRef();
 
   return (
-    <nav className="shadow-xl fixed top-0 w-full">
+    <nav className="shadow-lg fixed top-0 w-full">
       <TopNav />
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between h-16">
@@ -34,7 +35,7 @@ function MainNav() {
           </div>
 
           <div className="hidden md:block">
-            <ul className="flex items-center justify-center space-x-4 ga">
+            <ul className="flex items-center justify-center space-x-4 text-xl">
               <li className="inline-block ">
                 <Link
                   className="text-[#50DBB4] hover:text-gray-600 duration-500"
@@ -50,9 +51,7 @@ function MainNav() {
                 >
                   Games
                 </Link>
-                <div className="hidden group-hover:block h-60 w-[500px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200">
-
-                </div>
+                <div className="hidden group-hover:block h-60 w-[500px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200"></div>
               </li>
               <li className="inline-block ">
                 <Link
@@ -62,9 +61,18 @@ function MainNav() {
                   Information
                 </Link>
               </li>
-              
-              
             </ul>
+          </div>
+
+          <div className="hidden md:block">
+            <div className="inline-block mr-2 py-1 px-3 border-2 border-[#50DBB4] rounded-full ">
+              <input
+                className="focus:outline-none bg-transparent"
+                type="text"
+                placeholder="Enter your key-word"
+              />
+              <MagnifyingGlassIcon className="w-6 h-6 font-semibold text-gray-400 inline-block" />
+            </div>
           </div>
 
           <div className="hidden lg:block">

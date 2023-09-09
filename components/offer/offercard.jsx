@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const OfferCard = () => {
   return (
-    <div className='border shadow-2xl p-3 w-80 h-full bg-gray-100 rounded-md '>
+    <div className='border shadow-md p-3 w-full md:w-fit h-full bg-gray-100 rounded-md'>
         <div className='overflow-hidden '>
              <Image
         height={100}

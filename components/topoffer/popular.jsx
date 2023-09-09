@@ -5,8 +5,8 @@ import adding from "../../public/adding.webp";
 
 const Popular = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-5 mb-10 w-full">
-      <div className="card-container grid grid-cols-3 justify-center items-center gap-5 col-span-2">
+    <section className="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-y-5 md:gap-5 mb-10 w-full">
+      <div className="card-container grid grid-cols-2 md:grid-cols-3 justify-center items-center gap-5 mx-5 md:mx-0 col-span-2">
         <PopularCard />
         <PopularCard />
         <PopularCard />
@@ -14,7 +14,7 @@ const Popular = () => {
         <PopularCard />
         <PopularCard />
       </div>
-      <div className="google-add ">
+      <div className="google-add flex justify-center items-center mx-5 md:mx-0">
         <div className="border shadow-md p-3 w-full h-full bg-gray-100 rounded-lg">
           <Image
             height={100}

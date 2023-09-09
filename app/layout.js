@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import MainNav from "@/components/header/mainnav";
 import AuthProvider from "@/components/authprovider/authprovider";
+import Footer from "@/components/footer/page";
 
 
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <MainNav />
           {children}
+          <Footer />
         </AuthProvider>
       </body>
     </html>

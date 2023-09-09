@@ -1,3 +1,4 @@
+import DiscountA from '@/components/discount/discount'
 import Offers from '@/components/offer/page'
 import BannerSlider from '@/components/slider/page'
 import TopOffer from '@/components/topoffer/page'
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="">
       <BannerSlider />
       <TopOffer/>
+      <DiscountA />
       <Offers />
     </main>
   )

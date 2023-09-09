@@ -24,7 +24,7 @@ const BannerSlider = () => {
     }
 
   return (
-    <section className="relative mt-10 flex h-[calc(100vh-500px)] w-screen flex-col justify-center items-center ">
+    <section className="relative flex h-[calc(100vh-500px)] w-full flex-col justify-center items-center ">
       <div className="absolute w-full h-full -z-10">
         <Image     
           width={100}
@@ -39,11 +39,11 @@ const BannerSlider = () => {
         
       </div>
       {/* left array */}
-      <div onClick={handlePrevPage} className="z-10 fixed left-4 text-4xl font-bold ">
+      <div onClick={handlePrevPage} className="z-10 absolute left-4 text-4xl font-bold ">
         <span className="inline-block transition-transform hover:translate-x-1 motion-reduce:transform-none cursor-pointer hover:text-[#50DBB4] ">&lt;-</span>
       </div>
       {/* right array */}
-      <div onClick={handleNextPage} className="z-10 fixed right-4 text-4xl font-bold">
+      <div onClick={handleNextPage} className="z-10 absolute right-4 text-4xl font-bold">
         <span className="inline-block transition-transform hover:translate-x-1 motion-reduce:transform-none cursor-pointer hover:text-[#50DBB4] ">-&gt;</span>
       </div>
     </section>

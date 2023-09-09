@@ -54,7 +54,7 @@ function MainNav() {
                 >
                   Games
                 </Link>
-                <div className="hidden group-hover:block h-60 w-[500px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200"></div>
+                <div className="hidden group-hover:block h-60 w-[500px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200 z-10"></div>
               </li>
               <li className="inline-block relative group">
                 <Link
@@ -63,7 +63,7 @@ function MainNav() {
                 >
                   Information
                 </Link>
-                <div className="hidden group-hover:block h-40 w-[200px] absolute left-10 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200">
+                <div className="hidden group-hover:block h-40 w-[200px] absolute left-10 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200 z-10">
                   <ul className="p-3 text-gray-600 text-sm">
                     <li className=" hover:text-[#50DBB4] flex justify-center items-center mb-3">
                       <UserGroupIcon className="w-6 h-6 mr-2 font-semibold inline-block" />
@@ -104,9 +104,9 @@ function MainNav() {
                 <li className="inline-block ">
                   <button
                     onClick={() => signOut("google")}
-                    className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500"
+                    className="btn border border-[#50DBB4]  hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500"
                   >
-                    <Link href="/"> logOut</Link>
+                    <Link href="/"> {session.data?.user?.name}</Link>
                   </button>
                 </li>
               ) : (
@@ -214,7 +214,7 @@ function MainNav() {
                         onClick={() => signOut("google")}
                         className="btn border border-[#50DBB4] hover:bg-[#50DBB4] font-sm ml-2 py-1 px-3 hover:text-white rounded-md duration-500"
                       >
-                        <Link href="/"> logOut</Link>
+                        <Link href="/"> {session.data?.user?.name}</Link>
                       </button>
                     </li>
                   ) : (
@@ -269,7 +269,7 @@ function MainNav() {
                     >
                       Games
                     </Link>
-                    <div className="hidden group-hover:block h-60 w-[400px] absolute left-[-100px] shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200"></div>
+                    <div className="hidden group-hover:block h-60 w-[400px] absolute left-[-100px] shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200 z-10"></div>
                   </li>
                   <li className="inline-block relative group">
                     <Link
@@ -278,7 +278,7 @@ function MainNav() {
                     >
                       Information
                     </Link>
-                    <div className="hidden group-hover:block h-40 w-[200px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200">
+                    <div className="hidden group-hover:block h-40 w-[200px] absolute left-0 shadow-xl border-2 border-[#50dbb464] rounded-md bg-gray-50 duration-200 z-0">
                       <ul className="p-3 text-gray-600 text-sm">
                         <li className=" hover:text-[#50DBB4] flex justify-center items-center mb-3">
                           <UserGroupIcon className="w-6 h-6 mr-2 font-semibold inline-block" />

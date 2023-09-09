@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const OfferCard = () => {
   return (
-    <div className='border shadow-2xl p-3 w-full h-full bg-gray-100 rounded-md '>
+    <div className='border shadow-2xl p-3 w-80 h-full bg-gray-100 rounded-md '>
         <div className='overflow-hidden '>
              <Image
         height={100}
@@ -15,8 +15,10 @@ const OfferCard = () => {
         className='w-full object-cover rounded-md hover:scale-105 transition duration-500 ease-in-out'
          />
         </div>
-       
-         <h1 className='font-semibold text-md pt-2 text-gray-600'>Spider-Man  miles morales@ </h1>
+        <div className='pt-2 flex justify-between items-center'>
+            <span className='font-semibold text-md text-gray-600'>Spider-Man morales@ </span><span className='ml-auto bg-[#50DBB4] p-1 rounded-md text-white btn'>Sold Out</span>
+        </div>
+         
     </div>
   )
 }

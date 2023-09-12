@@ -3,7 +3,7 @@ import React from 'react'
 const DiscountA = () => {
   return (
     <div className=" container mx-auto ">
-	<div className="p-6 py-12 bg-[#50DBB4] dark:text-gray-900 rounded-md shadow-md flex justify-center items-center mx-5 md:mx-0">
+	<div className="p-6 py-12 bg-[#50DBB4] dark:text-gray-900 rounded-md shadow-md md:block flex justify-center items-center mx-5 md:mx-0">
 		<div className="flex flex-col lg:flex-row items-center justify-between">
 			<h2 className="text-center text-6xl font-bold">Up to
 				<br className="sm:hidden"/>50% Off

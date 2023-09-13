@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import OfferCard from "./offercard";
+import Link from "next/link";
 
 const Offer = () => {
   const [offers, setOffers] = useState([]);

@@ -1,5 +1,7 @@
+
+
 import DiscountA from '@/components/discount/discount'
-import Offers from '@/components/offer/page'
+import Offers from '@/app/offer/page'
 import BannerSlider from '@/components/slider/page'
 import TopOffer from '@/components/topoffer/page'
 import Image from 'next/image'

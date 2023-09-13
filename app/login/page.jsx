@@ -5,7 +5,7 @@ import Link from "next/link";
 import logo from "../../public/logo.png";
 
 const Login = () => {
-  const session = useSession();
+  // const session = useSession();
   
   // if(session.status === "loading"){
   //     return <div>loading...</div>

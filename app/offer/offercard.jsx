@@ -8,7 +8,7 @@ const OfferCard = ({ offer }) => {
   const [status, setStatus] = useState(offer?.status);
   return (
     <>
-      {offer?.length !== 0 ? (
+      
         <Link href={`/offer/${offer?._id}`}>
           <div className="border shadow-md p-3 w-full md:w-fit h-full bg-gray-100 rounded-md">
             <div className="overflow-hidden ">
@@ -37,22 +37,6 @@ const OfferCard = ({ offer }) => {
             </div>
           </div>
         </Link>
-      ) : (
-        <div className="py-4 rounded shadow-md w-60 sm:w-80 animate-pulse bg-gray-400">
-          <div className="flex p-4 space-x-4 sm:px-8">
-            <div className="flex-shrink-0 w-16 h-16 rounded-full dark:bg-gray-700"></div>
-            <div className="flex-1 py-2 space-y-4">
-              <div className="w-full h-3 rounded dark:bg-gray-700"></div>
-              <div className="w-5/6 h-3 rounded dark:bg-gray-700"></div>
-            </div>
-          </div>
-          <div className="p-4 space-y-4 sm:px-8">
-            <div className="w-full h-4 rounded dark:bg-gray-700"></div>
-            <div className="w-full h-4 rounded dark:bg-gray-700"></div>
-            <div className="w-3/4 h-4 rounded dark:bg-gray-700"></div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

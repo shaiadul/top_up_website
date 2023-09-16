@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import adding from "../../../public/adding.webp";
 
 const OfferDetails = ({ params }) => {
   const [item, setItem] = useState();
@@ -94,6 +95,56 @@ const OfferDetails = ({ params }) => {
               <button className=" text-sm text-gray-50 font-bold font-serif shadow-md m-5 p-2 bg-yellow-400 rounded-md w-full">
                 Buy Now
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* description */}
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start md:gap-5 ">
+        <div className="col-span-2 shadow-md bg-gray-100 border">
+          <h1 className="text-[#50DBB4] p-5 border-b-2 ">Description</h1>
+          <div className="m-5 grid grid-cols-1 gap-y-3 md:gap-3 ">
+            <span>
+              {" "}
+              <input type="radio" checked disabled /> শুধুমাত্র Bangladesh
+              সার্ভারে ID Code দিয়ে টপ আপ হবে।
+            </span>
+            <span>
+              {" "}
+              <input type="radio" checked disabled /> Player ID Code ভুল দিয়ে
+              Diamond না পেলে কর্তৃপক্ষ দায়ী নয় ।
+            </span>
+            <span>
+              {" "}
+              <input type="radio" checked disabled /> Order কমপ্লিট হওয়ার পরেও
+              আইডিতে ডাইমন্ড না গেলে চেক করার জন্য ID Pass দিতে হবে।
+            </span>
+            <span>
+              {" "}
+              <input type="radio" checked disabled /> অর্ডার Cancel হলে কি কারণে
+              তা Cancel হয়েছে তা বিবেচনা সাপেক্ষ ।
+            </span>
+          </div>
+        </div>
+        <div className="google-add flex justify-center items-center mx-5 md:mx-0">
+          <div className="border shadow-md p-3 w-full h-full bg-gray-100 rounded-lg">
+            <Image
+              height={100}
+              width={100}
+              sizes="100vw"
+              src={adding}
+              alt="card"
+              className="w-full rounded-lg"
+            />
+            <div className="font-semibold text-lg text-gray-400 pt-2">
+              Best online game of the month !{" "}
+              <a
+                target="_black"
+                href="https://play.google.com/store/apps/details?id=com.bag.farm.day.village.farming.games&hl=en&gl=US&pli=1"
+                className="text-gray-500 hover:underline hover:text-gray-400"
+              >
+                Install Now
+              </a>
             </div>
           </div>
         </div>

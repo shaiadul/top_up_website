@@ -10,9 +10,6 @@ const Popular = () => {
         <PopularCard />
         <PopularCard />
         <PopularCard />
-        <PopularCard />
-        <PopularCard />
-        <PopularCard />
       </div>
       <div className="google-add flex justify-center items-center mx-5 md:mx-0">
         <div className="border shadow-md p-3 w-full h-full bg-gray-100 rounded-lg">

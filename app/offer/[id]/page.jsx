@@ -3,11 +3,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import adding from "../../../public/adding.webp";
+import Link from "next/link";
 
 const OfferDetails = ({ params }) => {
   const [item, setItem] = useState();
-
   const [status, setStatus] = useState(item?.status);
+  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+  const [playerId, setPlayerId] = useState("");
+  // const [isSelected, setIsSelected] = useState(false);
+  
+  
+  
 
   const id = params.id;
   const fetchSingleOffer = async (id) => {
@@ -19,6 +26,23 @@ const OfferDetails = ({ params }) => {
   useEffect(() => {
     fetchSingleOffer(id);
   }, []);
+
+  const handlePrice = (price) => { 
+    setQuantity(quantity);
+    setPrice(price);
+  }; 
+  const handleQuantity = (quantity) => {
+    setQuantity(quantity);
+  }; 
+
+  const handlePlayerId = (e) => {
+    setPlayerId(e.target.value);
+  };
+  console.log(playerId);
+  // const handleClick = () => {
+  //     setIsSelected(!isSelected);
+  //   };    ${isSelected ? "bg-[#50dbb42f]" : "bg-white"}
+
 
   return (
     <section className="container mx-auto px-5 my-20">
@@ -53,12 +77,13 @@ const OfferDetails = ({ params }) => {
         <div className="col-span-2 shadow-md bg-gray-100 border">
           <h1 className="text-[#50DBB4] p-5 border-b-2 ">Select Recharge</h1>
           <div className="m-5 grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-3 ">
-            {item?.offers?.map((i) => {
+            {item?.offers?.map((i, index) => {
               return (
                 <div
-                  disabled={i.sold}
-                  key={i}
-                  className="flex justify-between items-center my-2 p-2 bg-white hover:bg-[#50dbb42f] border hover:border-[#50dbb42f] text-gray-400  font-semibold rounded-md duration-700"
+                  hidden={i?.sold === "false" ? true : false}
+                  key={index}
+                  onClick={() => handlePrice(Number(i?.price)) + handleQuantity(Number(i?.quantity)) }
+                  className={` flex justify-between items-center my-2 p-2 bg-white hover:bg-[#50dbb42f] border hover:border-[#50dbb42f] text-gray-400  font-semibold rounded-md duration-700 cursor-pointer`}
                 >
                   <div className="flex flex-col items-start">
                     <span className="text-xl">{i?.quantity} Diamond</span>
@@ -77,6 +102,8 @@ const OfferDetails = ({ params }) => {
             <div className="m-5 grid grid-cols-1 gap-3 justify-center items-center">
               <label htmlFor="player_id">Player ID</label>
               <input
+                onChange={handlePlayerId}
+                value={playerId}
                 type="text"
                 name="player_id"
                 id="player_id"
@@ -88,22 +115,22 @@ const OfferDetails = ({ params }) => {
           <div className=" shadow-md bg-gray-100 border">
             <h1 className="text-[#50DBB4] p-5 border-b-2 ">Payment</h1>
             <div className="m-5 flex justify-between items-center">
-              <span>Total Amount Is : </span>
-              <span> 000 BDT </span>
+              <span className="text-xl">Total Diamond Is : {quantity} </span>
+              <span className="text-xl"> {price} BDT </span>
             </div>
             <div className="flex justify-center">
-              <button className=" text-sm text-gray-50 font-bold font-serif shadow-md m-5 p-2 bg-yellow-400 rounded-md w-full">
+              <Link href="/checkout" className=" text-sm text-gray-50 font-bold font-serif shadow-md m-5 p-2 bg-yellow-400 rounded-md w-full">
                 Buy Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       {/* description */}
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start md:gap-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start gap-y-5 md:gap-5 ">
         <div className="col-span-2 shadow-md bg-gray-100 border">
           <h1 className="text-[#50DBB4] p-5 border-b-2 ">Description</h1>
-          <div className="m-5 grid grid-cols-1 gap-y-3 md:gap-3 ">
+          <div className="m-5 grid grid-cols-1 gap-y-5 md:gap-3 ">
             <span>
               {" "}
               <input type="radio" checked disabled /> শুধুমাত্র Bangladesh
@@ -124,9 +151,13 @@ const OfferDetails = ({ params }) => {
               <input type="radio" checked disabled /> অর্ডার Cancel হলে কি কারণে
               তা Cancel হয়েছে তা বিবেচনা সাপেক্ষ ।
             </span>
+            <div>
+              {" "}
+              <input type="radio" checked disabled /> Confirm Your Player ID: <span className="font-semibold">{playerId}</span> 
+            </div>
           </div>
         </div>
-        <div className="google-add flex justify-center items-center mx-5 md:mx-0">
+        <div className="google-add flex justify-center items-center mx-5 md:mx-0 w-full mx-auto">
           <div className="border shadow-md p-3 w-full h-full bg-gray-100 rounded-lg">
             <Image
               height={100}

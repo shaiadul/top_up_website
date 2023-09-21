@@ -1,8 +1,15 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import rocket from "../../public/rocket.png";
+import { useStore } from "../context/store";
+import { set } from "mongoose";
 
 const CheckOut = () => {
+  const { orderPrice, orderQuantity, orderPlayerId } = useStore();
+
+  console.log(orderPrice, orderQuantity, orderPlayerId);
+
   return (
     <section className="container mx-auto px-5 my-10">
       <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start gap-y-5 md:gap-5 my-5 ">

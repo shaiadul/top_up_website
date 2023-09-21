@@ -4,8 +4,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import adding from "../../../public/adding.webp";
 import Link from "next/link";
+import { useStore } from "@/app/context/store";
 
 const OfferDetails = ({ params }) => {
+
+  const {setOrderPrice, setOrderQuantity, setOrderPlayerId} = useStore();
+
   const [item, setItem] = useState();
   const [status, setStatus] = useState(item?.status);
   const [price, setPrice] = useState(0);
@@ -38,10 +42,12 @@ const OfferDetails = ({ params }) => {
   const handlePlayerId = (e) => {
     setPlayerId(e.target.value);
   };
-  console.log(playerId);
-  // const handleClick = () => {
-  //     setIsSelected(!isSelected);
-  //   };    ${isSelected ? "bg-[#50dbb42f]" : "bg-white"}
+  
+  const handleOrder = () => {
+    setOrderPrice(price);
+    setOrderQuantity(quantity);
+    setOrderPlayerId(playerId);
+  }  
 
 
   return (
@@ -119,7 +125,7 @@ const OfferDetails = ({ params }) => {
               <span className="text-xl"> {price} BDT </span>
             </div>
             <div className="flex justify-center">
-              <Link href="/checkout" className=" text-sm text-gray-50 font-bold font-serif shadow-md m-5 p-2 bg-yellow-400 rounded-md w-full">
+              <Link onClick={handleOrder} href="/checkout" className=" text-sm text-gray-50 font-bold font-serif shadow-md m-5 p-2 bg-yellow-400 rounded-md w-full">
                 Buy Now
               </Link>
             </div>

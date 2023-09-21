@@ -13,7 +13,7 @@ const OffersSchema = new Schema({
     type: String,
     required: [true, "status is required."],
   },
-  Offers: {
+  offers: {
     type: String,
     required: [true, "offers is required."],
   },

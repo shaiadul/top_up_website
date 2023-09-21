@@ -11,11 +11,9 @@ const OfferDetails = ({ params }) => {
   const {setOrderPrice, setOrderQuantity, setOrderPlayerId} = useStore();
 
   const [item, setItem] = useState();
-  const [status, setStatus] = useState(item?.status);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [playerId, setPlayerId] = useState("");
-  // const [isSelected, setIsSelected] = useState(false);
   
   
   

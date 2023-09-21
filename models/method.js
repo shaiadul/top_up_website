@@ -1,13 +1,13 @@
-import { Schema } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-const methodSchema = new Schema({
+const MethodSchema = new Schema({
   image: {
     type: String,
     required: [true, "image is required."],
   },
-  Number: {
+  phone: {
     type: String,
-    required: [true, "Number is required."],
+    required: [true, "phone is required."],
   },
   steps: {
     type: String,
@@ -15,5 +15,5 @@ const methodSchema = new Schema({
   },
 });
 
-const methods = model.methods || model("methods", methodSchema);
-export default methods;
+const Method = models.Method || model("Method", MethodSchema);
+export default Method;

@@ -20,5 +20,4 @@ const OffersSchema = new Schema({
 });
 
 const Offers = models.Offers || model("Offers", OffersSchema);
-
 export default Offers;

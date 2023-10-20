@@ -9,30 +9,46 @@ import {
 } from "@heroicons/react/24/solid";
 
 const DataCard = () => {
-    const { orderPrice, orderQuantity, orderPlayerId } = useStore();
-    const [copied, setCopied] = useState(false);
-  
-    const copyToClipboard = () =>{
-      navigator.clipboard.writeText("01740673877");
-      setCopied(true);
-    }
+  const { orderPrice, orderQuantity, orderPlayerId } = useStore();
+  const [copied, setCopied] = useState(false);
+  const [methods, setMethods] = useState([]);
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("01740673877");
+    setCopied(true);
+  };
 
+  const fetchMethods = async () => {
+    const response = await fetch("http://localhost:3000/api/methods");
+    const data = await response.json();
+    setMethods(data);
+  };
+
+  useEffect(() => {
+    fetchMethods();
+  }, []);
+
+console.log(methods);
   return (
-    <><div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start gap-y-5 md:gap-5 my-5 ">
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-start gap-y-5 md:gap-5 my-5 ">
         <div className="col-span-2 shadow-md bg-gray-100 border">
           <h1 className="text-[#50DBB4] p-5 border-b-2 ">
             Select Payment Method
           </h1>
           <div className="m-5 grid grid-cols-1 md:grid-cols-3 gap-y-3 md:gap-3 ">
-            <Image
-              height={100}
-              width={100}
-              sizes="100vw"
-              src={rocket}
-              alt="card"
-              className="w-full object-cover border rounded-md shadow-md"
-            />
+            
+            {methods?.map((method) => (
+              <Image
+                key={method.id}
+                height={100}
+                width={100}
+                sizes="100vw"
+                src={method?.image}
+                alt="card"
+                className="w-full h-40 object-cover border-2 border-[#50dbb43a] rounded-md shadow-md"
+              />
+            ))}
           </div>
         </div>
         <div className="flex flex-col gap-y-5">
@@ -91,9 +107,10 @@ const DataCard = () => {
                 {copied ? (
                   <ClipboardDocumentCheckIcon className="ml-2 w-6 h-6 text-gray-600 inline-block" />
                 ) : (
-                  <ClipboardDocumentIcon 
-                  onClick={copyToClipboard}
-                  className="ml-2 w-6 h-6 text-gray-500 inline-block" />
+                  <ClipboardDocumentIcon
+                    onClick={copyToClipboard}
+                    className="ml-2 w-6 h-6 text-gray-500 inline-block"
+                  />
                 )}
               </span>
             </div>
@@ -111,8 +128,7 @@ const DataCard = () => {
         </div>
       </div>
     </>
-    
-  )
-}
+  );
+};
 
-export default DataCard
+export default DataCard;

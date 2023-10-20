@@ -9,7 +9,6 @@ export const GET = async (request) => {
     if (!offers) {
       return new Response("offers not found", { status: 404 });
     }
-
     return new Response(JSON.stringify(offers), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch data ", { status: 500 });

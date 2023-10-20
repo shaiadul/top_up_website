@@ -6,6 +6,8 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "res.cloudinary.com",
       "uidapi.xdomainhost.com",
+      "seeklogo.com",
+      "download.logo.wine",
     ],
   },
 };

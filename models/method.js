@@ -1,5 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
+
 const MethodSchema = new Schema({
   image: {
     type: String,
@@ -9,11 +10,11 @@ const MethodSchema = new Schema({
     type: String,
     required: [true, "phone is required."],
   },
-  steps: {
+  step: {
     type: String,
     required: [true, "steps is required."],
   },
 });
 
-const Method = models.Method || model("Method", MethodSchema);
-export default Method;
+const Methods = models.Method || model("Method", MethodSchema);
+export default Methods;

@@ -1,4 +1,3 @@
-
 import Method from "@/models/method";
 import { connectToDB } from "@/utils/database";
 

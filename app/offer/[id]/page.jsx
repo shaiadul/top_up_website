@@ -14,15 +14,15 @@ const OfferDetails = ({ params }) => {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [playerId, setPlayerId] = useState("");
-  
-  
-  
+
 
   const id = params.id;
+
   const fetchSingleOffer = async (id) => {
     const response = await fetch(`http://localhost:3000/api/offers/` + id);
     const data = await response.json();
     setItem(data);
+   
   };
 
   useEffect(() => {
@@ -46,7 +46,6 @@ const OfferDetails = ({ params }) => {
     setOrderQuantity(quantity);
     setOrderPlayerId(playerId);
   }  
-
 
   return (
     <section className="container mx-auto px-5 my-20">
@@ -81,12 +80,15 @@ const OfferDetails = ({ params }) => {
         <div className="col-span-2 shadow-md bg-gray-100 border">
           <h1 className="text-[#50DBB4] p-5 border-b-2 ">Select Recharge</h1>
           <div className="m-5 grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-3 ">
-            {item?.offers?.map((i, index) => {
+            {item?.packages?.map((i, index) => {
               return (
                 <div
-                  hidden={i?.sold === "false" ? true : false}
+                  hidden={i?.sold === false ? true : false}
                   key={index}
-                  onClick={() => handlePrice(Number(i?.price)) + handleQuantity(Number(i?.quantity)) }
+                  onClick={() => {
+                    handlePrice(Number(i?.price));
+                    handleQuantity(Number(i?.quantity));
+                  }}
                   className={` flex justify-between items-center my-2 p-2 bg-white hover:bg-[#50dbb42f] border hover:border-[#50dbb42f] text-gray-400  font-semibold rounded-md duration-700 cursor-pointer`}
                 >
                   <div className="flex flex-col items-start">

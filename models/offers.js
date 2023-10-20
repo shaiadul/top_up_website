@@ -1,5 +1,11 @@
 import { Schema, model, models } from "mongoose";
 
+const packageSchema = new Schema({
+  quantity: { type: Number, required: true },
+  price: { type: Number, required: true },
+  sold: { type: Boolean, required: true },
+});
+
 const OffersSchema = new Schema({
   title: {
     type: String,
@@ -13,10 +19,7 @@ const OffersSchema = new Schema({
     type: String,
     required: [true, "status is required."],
   },
-  offers: {
-    type: String,
-    required: [true, "offers is required."],
-  },
+  packages: [packageSchema]
 });
 
 const Offers = models.Offers || model("Offers", OffersSchema);

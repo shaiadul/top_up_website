@@ -85,7 +85,7 @@ console.log(methods);
               1. *247# ডায়াল করে আপনার Bkash মোবাইল মেনুতে যান অথবা Bkash
               অ্যাপে যান।
             </span>
-            <span>2. "Send Money" -এ ক্লিক করুন।</span>
+            <span>2. Send Money -এ ক্লিক করুন।</span>
             <span className="flex">
               3. প্রাপক নম্বর হিসেবে আমাদের একাউন্ট নম্বরটি লিখুনঃ{" "}
               <p className="font-semibold ml-2">01740673877</p>
